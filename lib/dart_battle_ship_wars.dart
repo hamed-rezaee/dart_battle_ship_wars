@@ -35,7 +35,7 @@ class ArmoredSpaceship extends Spaceship {
   @override
   void takeDamage(int firepower) {
     final double damageAbsorbing =
-        math.Random().nextDouble() * (1 - maxArmorPower) + 1;
+        1 - math.Random().nextDouble() * maxArmorPower;
     final int effectiveDamage = (firepower * damageAbsorbing).toInt();
 
     health -= effectiveDamage;
